@@ -16,9 +16,9 @@ export default function Appointment(props) {
   const EMPTY = "EMPTY";
   const SHOW = "SHOW";
   const CREATE = "CREATE";
-  const SAVING = "SAVING";
-  const DELETING = "DELETING";
-  const CONFIRM = "CONFIRM";
+  const SAVING = "Saving";
+  const DELETING = "Deleting";
+  const CONFIRM = "Are you sure you would like to delete?";
   const EDIT = "EDIT";
   const ERROR_SAVE = "ERROR_SAVE";
   const ERROR_DELETE = "ERROR_DELETE";
@@ -56,7 +56,7 @@ export default function Appointment(props) {
   }
 
   return (
-    <article className="appointment">
+    <article className="appointment" data-testid="appointment">
       <Header time={props.time} />
       {/* {props.interview ? <Show student={props.interview.student} interviewer={props.interview.interviewer.name} /> : <Empty />} */}
       {mode === CREATE && 

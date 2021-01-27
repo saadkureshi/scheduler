@@ -14,6 +14,12 @@ export default function useApplicationData() {
   function bookInterview(id, interview) {
 
     console.log(id, interview);
+    const days = [...state.days];
+    days.forEach(day => {
+      if (day.name === state.day && !state.appointments[id].interview) {
+        day.spots -= 1;
+      }
+    })
 
     const appointment = {
       ...state.appointments[id],
@@ -27,7 +33,8 @@ export default function useApplicationData() {
 
     setState({
       ...state,
-      appointments
+      appointments,
+      days
     });
 
     return axios.put(`/api/appointments/${id}`,{interview})
@@ -39,6 +46,13 @@ export default function useApplicationData() {
   function cancelInterview(id, interview) {
 
     console.log(id, interview);
+
+    const days = [...state.days];
+    days.forEach(day => {
+      if (day.name === state.day) {
+        day.spots += 1;
+      }
+    })
 
     const appointment = {
       ...state.appointments[id],
@@ -55,7 +69,8 @@ export default function useApplicationData() {
       console.log(response)
       setState(prev => ({
         ...prev,
-        appointments
+        appointments,
+        days
       }));
     })
   }
@@ -66,7 +81,6 @@ export default function useApplicationData() {
       axios.get("/api/appointments"),
       axios.get("/api/interviewers")
     ]).then((all) => {
-      const [days, appointments, interviewers] = all;
       setState(prev => ({...prev, days: all[0].data, appointments: all[1].data, interviewers: all[2].data }));
     });
   }, [])
