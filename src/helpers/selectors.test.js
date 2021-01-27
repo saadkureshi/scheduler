@@ -1,11 +1,5 @@
 import { getAppointmentsForDay, getInterview, getInterviewsForDay } from "helpers/selectors";
 
-//       interviewer: {
-//         id: 1,
-//         name: "Sylvia Palmer",
-//         avatar: "https://i.imgur.com/LpaY82x.png",
-//       }
-
 const state = {
   days: [
     {

@@ -41,12 +41,9 @@ export default function Appointment(props) {
       transition(ERROR_SAVE, true)
     });
   }
-  // name, interviewer => arguments for below
+
   function deleteInterview() {
-    // const interview = {
-    //   student: name,
-    //   interviewer
-    // };
+
     transition(DELETING, true);
     props.cancelInterview(props.id, null)
     .then(() => transition(EMPTY))
@@ -58,7 +55,6 @@ export default function Appointment(props) {
   return (
     <article className="appointment" data-testid="appointment">
       <Header time={props.time} />
-      {/* {props.interview ? <Show student={props.interview.student} interviewer={props.interview.interviewer.name} /> : <Empty />} */}
       {mode === CREATE && 
       <Form 
         interviewers={props.interviewers}

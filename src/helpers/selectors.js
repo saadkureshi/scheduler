@@ -37,15 +37,3 @@ export function getInterviewsForDay(state, day) {
   })
   return result;
 }
-
-// we give it state and { student: "Archie Cohen", interviewer: 2 }
-
-// desired return looks like:
-// {  
-//   "student": "Lydia Miller-Jones",
-//   "interviewer": {  
-//     "id": 1,
-//     "name": "Sylvia Palmer",
-//     "avatar": "https://i.imgur.com/LpaY82x.png"
-//   }
-// }
