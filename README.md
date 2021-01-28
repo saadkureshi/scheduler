@@ -1,5 +1,9 @@
 # Interview Scheduler
 
+A web application that allows users to book/edit/delete interviews and choose their interviewer. Built using React.
+
+Deployed using Netlify. You can visit it here: https://affectionate-liskov-200078.netlify.app/
+
 ## Setup
 
 Install dependencies with `npm install`.
