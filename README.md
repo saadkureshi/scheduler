@@ -4,6 +4,8 @@ A web application that allows users to book/edit/delete interviews and choose th
 
 Deployed using Netlify. You can visit it here: https://affectionate-liskov-200078.netlify.app/
 
+!["Scheduler App View"](https://raw.githubusercontent.com/saadkureshi/scheduler/master/docs/scheduler-app.png)
+
 ## Setup
 
 Install dependencies with `npm install`.
